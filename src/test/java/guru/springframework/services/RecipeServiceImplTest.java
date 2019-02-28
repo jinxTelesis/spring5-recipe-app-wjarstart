@@ -29,12 +29,12 @@ public class RecipeServiceImplTest {
 
 
 
-    @Before
-    public void setUp() throws Exception {
-        MockitoAnnotations.initMocks(this);
-
-        recipeService = new RecipeServiceImpl(recipeRepository);
-    }
+//    @Before
+//    public void setUp() throws Exception {
+//        MockitoAnnotations.initMocks(this);
+//
+//        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
+//    }
 
     @Test
     public void getRecipeByIdTest() throws Exception{
