@@ -54,8 +54,8 @@ public class RecipeController {
         return "redirect:/recipe/" + savedCommand.getId() + "/show";
     }
 
-    @PostMapping("recipe")
-    public String saveOrUpdate(@Valid @ModelAttribute "recipe")
+    //@PostMapping("recipe")
+    //public String saveOrUpdate(@Valid @ModelAttribute "recipe")
 
     @GetMapping
     @RequestMapping("recipe/{id}/delete")
