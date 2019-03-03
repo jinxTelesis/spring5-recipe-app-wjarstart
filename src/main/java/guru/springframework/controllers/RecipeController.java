@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
+
 
 @Slf4j
 @Controller
@@ -52,6 +54,9 @@ public class RecipeController {
         return "redirect:/recipe/" + savedCommand.getId() + "/show";
     }
 
+    //@PostMapping("recipe")
+    //public String saveOrUpdate(@Valid @ModelAttribute "recipe")
+
     @GetMapping
     @RequestMapping("recipe/{id}/delete")
     public String deleteById(@PathVariable String id){
@@ -77,17 +82,17 @@ public class RecipeController {
         return modelAndView;
     }
 
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(NumberFormatException.class)
-    public ModelAndView handleNumberFormat(Exception exception){
-        log.error("Handling Number Format Exception");
-        log.error(exception.getMessage());
-
-        ModelAndView modelAndView = new ModelAndView();
-
-        modelAndView.setViewName("400error");
-        modelAndView.addObject("exception", exception);
-
-        return modelAndView;
-    }
+//    @ResponseStatus(HttpStatus.BAD_REQUEST)
+//    @ExceptionHandler(NumberFormatException.class)
+//    public ModelAndView handleNumberFormat(Exception exception){
+//        log.error("Handling Number Format Exception");
+//        log.error(exception.getMessage());
+//
+//        ModelAndView modelAndView = new ModelAndView();
+//
+//        modelAndView.setViewName("400error");
+//        modelAndView.addObject("exception", exception);
+//
+//        return modelAndView;
+//    }
 }
